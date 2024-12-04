@@ -1,3 +1,9 @@
+import { HTag } from "@/shared/ui/HTag/HTag";
+
 export default function Home() {
-  return <>Привет мир</>;
+  return (
+    <>
+      <HTag tag="h3">ПРивет мир</HTag>
+    </>
+  );
 }
