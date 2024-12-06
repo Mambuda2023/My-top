@@ -1,8 +1,14 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: true,
+/**@type {import("next").NextConfig}*/
+module.exports = {
+  webpack: (config: {
+    module: {
+      rules: { test: RegExp; use: string[] }[];
+    };
+  }) => {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      use: ["@svgr/webpack"],
+    });
+    return config;
+  },
 };
-
-export default nextConfig;
