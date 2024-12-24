@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import "@/styles/reset.css";
-import "@/styles/globals.css";
+
+import "../app/styles/reset.css";
+import "../app/styles/globals.css";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";

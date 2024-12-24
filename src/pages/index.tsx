@@ -1,8 +1,8 @@
-import { Button } from "@/shared/ui/Button/Button";
-import { HTag } from "@/shared/ui/HTag/HTag";
-import { Paragraph } from "@/shared/ui/Paragraph/Paragraph";
-import { Tag } from "@/shared/ui/Tag/Tag";
-export default function Home() {
+import { useState } from "react";
+import { Button, Paragraph, Rating, Tag, HTag } from "../shared/ui/index";
+import { withLayout } from "../widgets/Layout/Layout";
+function Home() {
+  const [rating, setRating] = useState<number>(4);
   return (
     <>
       <HTag tag="h3">ПРивет мир</HTag>
@@ -25,6 +25,9 @@ export default function Home() {
       <Tag size="s" color="gray">
         gray
       </Tag>
+      <Rating rating={rating} isEditable setRating={setRating} />
     </>
   );
 }
+
+export default withLayout(Home);
