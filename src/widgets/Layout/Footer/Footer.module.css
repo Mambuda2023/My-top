@@ -1,0 +1,38 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 20px 40px;
+  background: var(--primary);
+  padding: 25px 30px;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+}
+
+.item > a {
+  line-height: 1.5rem;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.item > a:hover {
+  color: var(--gray-light);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
