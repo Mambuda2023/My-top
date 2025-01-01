@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Button, Paragraph, Rating, Tag, HTag } from "../shared/ui/index";
 import { withLayout } from "../widgets/Layout/Layout";
-function Home() {
+import { GetStaticProps } from "next";
+import axios from "axios";
+import { MenuItem } from "../app/interfaces/menu.interface";
+import { headers } from "next/headers";
+function Home({ menu }: HomeProps) {
   const [rating, setRating] = useState<number>(4);
   return (
     <>
@@ -31,3 +35,23 @@ function Home() {
 }
 
 export default withLayout(Home);
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const firstCategory = 0;
+  const { data: menu } = await axios.post<MenuItem[]>(
+    process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
+    {
+      firstCategory,
+    }
+  );
+  return {
+    props: {
+      menu,
+      firstCategory,
+    },
+  };
+};
+
+interface HomeProps extends Record<string, unknown> {
+  menu: MenuItem[];
+  firstCategory: number;
+}

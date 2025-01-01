@@ -24,7 +24,7 @@ export const Button = ({
             [styles.down]: arrow === "down",
           })}
         >
-          <ArrowIcon alt="Arrow icon" />
+          <ArrowIcon aria-label="Arrow icon" />
         </span>
       )}
     </button>

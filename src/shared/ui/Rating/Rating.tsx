@@ -2,7 +2,7 @@ import { RatingProps } from "./Rating.props";
 import styles from "./Rating.module.css";
 import cn from "classnames";
 import StarIcon from "./star.svg";
-import { useEffect, useState } from "react";
+import { KeyboardEvent, useEffect, useState } from "react";
 export const Rating = ({
   isEditable = false,
   rating,
@@ -31,7 +31,7 @@ export const Rating = ({
     setRating(i);
   };
 
-  const handleSpace = (i: number, event) => {
+  const handleSpace = (i: number, event: KeyboardEvent<SVGElement>) => {
     if (event.code !== "Space" || !setRating) {
       return;
     }
@@ -52,7 +52,7 @@ export const Rating = ({
           onClick={() => onClick(i + 1)}
         >
           <StarIcon
-            alt="Icon star"
+            aria-label="Icon star"
             height={20}
             width={20}
             tabIndex={isEditable ? 0 : -1}
