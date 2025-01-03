@@ -1,4 +1,5 @@
 .footer {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr auto auto;
   gap: 20px 40px;

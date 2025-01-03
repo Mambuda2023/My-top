@@ -29,6 +29,13 @@
   line-height: 1rem;
 }
 
+.secondLevel:hover {
+  color: var(--primary);
+}
+
+.secondLevelBlockOpenedActive {
+  color: var(--primary);
+}
 .secondBlock {
   margin-top: 15px;
   margin-left: 12px;
@@ -39,15 +46,29 @@
 .secondLevelBlockOpened:last-child {
   margin-bottom: 20px;
 }
+.secondLevelBlock {
+  display: none;
+}
+
+.secondLevelBlockOpened {
+  display: block;
+}
 
 .thirdLevel {
+  display: block;
   transition: all ease 0.3s;
   display: block;
   margin-bottom: 10px;
+  padding-left: 10px;
   cursor: pointer;
   color: var(--gray-dark);
   font-size: 14px;
   line-height: 19px;
+}
+
+.thirdLevelActive {
+  display: none;
+  color: var(--primary);
 }
 
 .thirdLevelActive,
