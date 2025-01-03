@@ -4,7 +4,7 @@ import { withLayout } from "../widgets/Layout/Layout";
 import { GetStaticProps } from "next";
 import axios from "axios";
 import { MenuItem } from "../app/interfaces/menu.interface";
-import { headers } from "next/headers";
+
 function Home({ menu }: HomeProps) {
   const [rating, setRating] = useState<number>(4);
   return (
